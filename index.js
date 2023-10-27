@@ -17,7 +17,7 @@ inquirer
     },
     {
         type: 'input',
-        name: 'installation instructions',
+        name: 'installation',
         message: 'Provide instructions on how to install your application'
     },
     {
@@ -54,6 +54,9 @@ inquirer
 function init() {
 fileName.writeToFile();
 
+
+} catch (err) {
+    console.log(err);
 }
 
 // Function call to initialize app
