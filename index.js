@@ -38,26 +38,25 @@ inquirer
     {
         type: 'list',
         name: 'license',
-        choices: ['MIT',  'Unlicensed'],
+        choices: ['Apache', 'GNU', 'MIT', 'BSD', 'Boost', 'Mozilla', 'Unlicense'],
         message: 'What is the license of your project?'
     }
-]);
+])
 
 // TODO: Create a function to write README file
 .then((data) => {
-    console.log(data)}
-    function writeToFile(fileName, data) {
-        const fileName = `${data.name.toLowerCase().split(' ').join('')}.json`;
-})
+    const markDown = writeToFile(data);
+    fs.writeToFile('README.md', markDown, (err) =>
+    err ? console.log(err) : console.log('Sucessfully created README.md'));
+});
 
 // TODO: Create a function to initialize app
 function init() {
-fileName.writeToFile();
-
-
-} catch (err) {
-    console.log(err);
-}
+    writeToFile()
+    .then((data) => writeToFile('README.md', generateMarkdown(data)))
+    .then(() => console.log('Successfully created README.md'))
+    .catch ((err) => console.log(err));
+};
 
 // Function call to initialize app
 init();
