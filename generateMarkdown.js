@@ -1,16 +1,22 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+const {makeBadge, ValidationError} = require('badge-maker')
 function renderLicenseBadge(license) {
-  var badge = "";
-  if (data.license === "Unlicense")
-  return badge = "";
+  if (license === "") return ""
+  const badgeFormat = {
+    label: 'License',
+    message: license,
+    color: 'green',
+  }
+  return makeBadge(badgeFormat)
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   var licenseLink = data.license;
-  if () {
+  if license === MIT 
+  return "url"
 
   } else if (data.license === "Unlicense" )
   return licenseLink = "";
@@ -50,6 +56,7 @@ function generateMarkdown(data) {
   ${data.tests}
 
   ## License
+  ${renderLicenseBadge(data.license)}
   ${data.license}
 
 `;
