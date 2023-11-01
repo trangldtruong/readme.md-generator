@@ -36,8 +36,14 @@ var questions = [
     {
         type: 'list',
         name: 'license',
-        choices: ['Apache', 'GNU', 'MIT', 'BSD', 'Boost', 'Mozilla', 'Unlicense'],
+        choices: ['Apache', 'GNU', 'MIT', 'Boost', 'Mozilla', 'Unlicense'],
         message: 'What is the license of your project?'
+    
+    }, 
+    {
+        type: 'input'
+        name: 'username'
+        message: 'What is your username'
     }
 ]
 // TODO: Create an array of questions for user input
