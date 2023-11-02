@@ -89,7 +89,7 @@ function generateMarkdown(data) {
   ${renderLicenseBadge(data.license)}
   ${data.license}
   [License link can be found here](${renderLicenseLink(data.license)})
-  ${renderLicenseSection(license)}
+  ${renderLicenseSection(data.license)}
 
 `;
 }

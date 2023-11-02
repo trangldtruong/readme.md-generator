@@ -41,9 +41,9 @@ var questions = [
     
     }, 
     {
-        type: 'input'
-        name: 'username'
-        message: 'What is your username'
+        type: 'input',
+        name: 'username',
+        message: 'What is your username?'
     }
 ]
 // TODO: Create an array of questions for user input
@@ -51,7 +51,7 @@ var questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeToFile(fileName, data, (err) =>
+    fs.writeFileSync(fileName, data, (err) =>
     err ? console.log(err) : console.log('Sucessfully created README.md'));
 };
 
@@ -61,7 +61,7 @@ function init() {
     inquirer.prompt(questions)
     .then((data) => {
         markDown = generateMarkdown(data)
-        writeToFile('readme.md', markDown)
+        writeToFile('sample-readme.md', markDown)
     })
 };
 
