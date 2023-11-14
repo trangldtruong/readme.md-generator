@@ -1,4 +1,4 @@
-// TODO: Include packages needed for this application
+//packages needed for this application
 const fs = require('fs')
 const inquirer = require('inquirer')
 const generateMarkdown = require('./generateMarkdown')
@@ -49,7 +49,7 @@ var questions = [
 // TODO: Create an array of questions for user input
 
 
-// TODO: Create a function to write README file
+//function to write README file
 function writeToFile(fileName, data) {
     fs.writeFileSync(fileName, data, (err) =>
     err ? console.log(err) : console.log('Sucessfully created README.md'));
